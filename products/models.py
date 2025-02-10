@@ -21,6 +21,7 @@ class Settings(models.Model):
 
 class Slider(models.Model):
     nad_title = models.CharField(max_length=30, verbose_name="Над Заголовком")
+    photo = models.ImageField(upload_to='images/', null=True)
     title = models.CharField(max_length=100, verbose_name="Заголовок")
     little_title = models.CharField(max_length=100, verbose_name="Под Заголовок")
     click_button = models.CharField(

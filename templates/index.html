@@ -46,7 +46,7 @@
                             <!-- site-branding -->
                             <div class="site-branding ">
                                 <a class="home-link" href="index.html" title="Fablio" rel="home">
-                                    <img id="logo-img" width="88" class="img-fluid auto_size logo-img" src="images/logo-img.png" alt="logo-img">
+                                    <img id="logo-img" width="88" class="img-fluid auto_size logo-img" src="{{settings.logo.url}}" alt="logo-img">
                                 </a>
                             </div><!-- site-branding end -->
                         </div>
@@ -58,7 +58,7 @@
                                     <div class="widget_icon ttm-textcolor-skincolor"><i class="flaticon flaticon-email-2"></i></div>
                                     <div class="widget_content">
                                         <p>Отправить Email</p>
-                                        <h3>afinafactory@mail.ru</h3>
+                                        <h3>{{settings.email}}</h3>
                                     </div>
                                 </div><!-- widget-info end -->
                                 <!-- widget-info -->
@@ -66,7 +66,7 @@
                                     <div class="widget_icon ttm-textcolor-skincolor"><i class="flaticon flaticon-clock"></i></div>
                                     <div class="widget_content">
                                         <p>Часы работы</p>
-                                        <h3>Пн-Сб 09:00 до 21:00</h3>
+                                        <h3>{{settings.time_to_work}}</h3>
                                     </div>
                                 </div><!-- widget-info end -->
                                 <!-- widget-info -->
@@ -74,7 +74,7 @@
                                     <div class="widget_icon ttm-textcolor-skincolor"><i class="flaticon flaticon-phone-call"></i></div>
                                     <div class="widget_content">
                                         <p>По вопросам</p>
-                                        <h3>+996 503 277 372</h3>
+                                        <h3>{{settings.phone1}}</h3>
                                     </div>
                                 </div><!-- widget-info end -->
                             </div><!-- ttm-widget-header end -->
@@ -139,18 +139,19 @@
         <!-- Banner -->
         <div class="banner_slider_wrapper">
             <div class="banner_slider banner_slider_2">
+                {% for slid in sliders %}
                 <div class="slide">
-                    <div class="slide_img" style="background-image: url(images/slides/slider-mainbg-003.jpg);"></div>
+                    <div class="slide_img" style="background-image: url('{{slid.photo.url}}');"></div>
                     <div class="slide__content">
                         <div class="container">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="slide__content--headings ttm-textcolor-white text-center margin_bottom100 res-991-margin_bottom0">
-                                        <span  data-animation="fadeInDown">Ваш лучший партнёр</span>
-                                        <h2  data-animation="fadeInDown" class="border_text">AFiNA</h2>
-                                        <p  data-animation="fadeInDown">Швейное производство полного цикла </p>
+                                        <span  data-animation="fadeInDown">{{slid.nad_title}}</span>
+                                        <h2  data-animation="fadeInDown" class="border_text">{{slid.title}}</h2>
+                                        <p  data-animation="fadeInDown">{{slid.little_title}} </p>
                                         <div class="d-inline-block margin_top40 res-767-margin_top30" data-animation="fadeInUp" data-delay="1.4">
-                                            <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor" target="_blank" href="https://t.me/afina_fabric">Связаться</a>
+                                            <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor" target="_blank" href="{{slid.click_button}}">Связаться</a>
                                         </div>
                                     </div>
                                 </div>
@@ -158,24 +159,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide">
-                    <div class="slide_img" style="background-image: url(images/slides/slider-mainbg-004.jpg);"></div>
-                    <div class="slide__content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="slide__content--headings ttm-textcolor-white text-center margin_bottom100 res-991-margin_bottom0">
-                                        <span  data-animation="fadeInDown" class="border_text">Since 2015</span>
-                                        <h2  data-animation="fadeInDown">Специализируемся на пошиве одежды второго и третьего слоя</h2> 
-                                        <div class="d-inline-block margin_top40 res-767-margin_top30" data-animation="fadeInUp" data-delay="1.4">
-                                            <a class="ttm-btn ttm-btn-size-md ttm-btn-shape-square ttm-btn-style-fill ttm-btn-color-skincolor" target="_blank" href="https://t.me/afina_fabric">Связаться</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <!-- Banner end-->
@@ -522,104 +506,7 @@
                     </div>
                 </div>
             </section>
-            <!--padding_zero-section end-->
-
-
-            <!--procedure-section-->
-            <section class="ttm-row procedure-section ttm-bgcolor-grey clearfix">
-                <div class="container">
-                    <!-- row -->
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="padding_top70 res-991-padding_top0"></div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- section-title -->
-                            <div class="section-title title-style-center_text">
-                                <div class="title-header">
-                                    <h3>OUR WORKING PROCESS</h3>
-                                    <h2 class="title">Simple Step To Get <b>Textile?</b></h2>
-                                </div>
-                            </div><!-- section-title end -->
-                        </div>
-                    </div><!-- row end -->
-                    <!-- row -->
-                    <div class="row procedure-row position-relative mb_15">
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- featured-imagebox -->
-                            <div class="featured-imagebox featured-imagebox-procedure">
-                                <div class="featured-thumbnail">
-                                    <img class="img-fluid auto_size" width="198" height="198" src="images/process-01-198x198.jpg" alt="image">
-                                    <div class="process-num"></div>
-                                </div>
-                                <div class="featured-content">
-                                    <div class="featured-title">
-                                        <h3>Production of Fabric</h3>
-                                    </div>
-                                    <div class="featured-desc">
-                                        <p>We Produce the best quality of  fabric covered all aspects</p>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox end-->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- featured-imagebox -->
-                            <div class="featured-imagebox featured-imagebox-procedure">
-                                <div class="featured-thumbnail">
-                                    <img class="img-fluid auto_size" width="198" height="198" src="images/process-02-198x198.jpg" alt="image">
-                                    <div class="process-num"></div>
-                                </div>
-                                <div class="featured-content">
-                                    <div class="featured-title">
-                                        <h3>Exportation Globally</h3>
-                                    </div>
-                                    <div class="featured-desc">
-                                        <p>We not only export locally but all over the world</p>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox end-->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- featured-imagebox -->
-                            <div class="featured-imagebox featured-imagebox-procedure">
-                                <div class="featured-thumbnail">
-                                    <img class="img-fluid auto_size" width="198" height="198" src="images/process-03-198x198.jpg" alt="image">
-                                    <div class="process-num"></div>
-                                </div>
-                                <div class="featured-content">
-                                    <div class="featured-title">
-                                        <h3>Digital Shop Available</h3>
-                                    </div>
-                                    <div class="featured-desc">
-                                        <p>Showcased digitally our all the products for best reach</p>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox end-->
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <!-- featured-imagebox -->
-                            <div class="featured-imagebox featured-imagebox-procedure">
-                                <div class="featured-thumbnail">
-                                    <img class="img-fluid auto_size" width="198" height="198" src="images/process-04-198x198.jpg" alt="image">
-                                    <div class="process-num"></div>
-                                </div>
-                                <div class="featured-content">
-                                    <div class="featured-title">
-                                        <h3>Great Client Support</h3>
-                                    </div>
-                                    <div class="featured-desc">
-                                        <p>our front desk is available for clients for 24*7!</p>
-                                    </div>
-                                </div>
-                            </div><!-- featured-imagebox end-->
-                        </div>
-                    </div><!-- row end -->
-                </div>
-            </section>
-            <!--procedure-section end-->
-
+            <!--padding_zero-section end--> 
 
             <!--padding_zero-section-->
             <section class="ttm-row padding_zero-section col_overlay_section bg-layer-equal-height ttm-bgcolor-skincolor clearfix">
