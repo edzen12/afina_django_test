@@ -10,3 +10,11 @@ def home(request):
         'settings':settings,
     }
     return render(request, 'index.html', context)
+
+
+def contact(request):
+    settings = Settings.objects.latest('id')
+    context = { 
+        'settings':settings,
+    }
+    return render(request, 'contact.html', context)
